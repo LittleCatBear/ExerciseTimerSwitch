@@ -39,7 +39,7 @@ class TimerViewController: UIViewController {
     func lauchExercise(){
         self.exerciseLabel.text = getExercise()
         myUtterance = AVSpeechUtterance(string: self.exerciseLabel.text)
-        myUtterance.rate = 0.2
+        myUtterance.rate = 0.1
         synth.speakUtterance(myUtterance)
         self.sec = self.seconds
         self.timingLab.text = "Time: \(sec)"
