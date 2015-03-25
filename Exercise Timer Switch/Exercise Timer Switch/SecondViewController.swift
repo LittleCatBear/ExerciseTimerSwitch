@@ -24,5 +24,8 @@ class SecondViewController: UIViewController {
     @IBAction func onClickNewTiming(sender: UIButton) {
     }
 
+    @IBAction func goToInit(segue:UIStoryboardSegue){
+        NSLog("Called goToInit: unwind action")
+    }
 }
 
