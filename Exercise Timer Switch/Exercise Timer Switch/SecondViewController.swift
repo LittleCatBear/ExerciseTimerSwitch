@@ -9,8 +9,12 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
     @IBOutlet weak var ExerciseTableView: UITableView!
-
+    @IBOutlet weak var timingTextField: UITextField!
+    @IBOutlet weak var timingLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,10 +26,25 @@ class SecondViewController: UIViewController {
     }
 
     @IBAction func onClickNewTiming(sender: UIButton) {
+        self.timingLabel.text = self.timingTextField.text
     }
 
     @IBAction func goToInit(segue:UIStoryboardSegue){
         NSLog("Called goToInit: unwind action")
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "showTimer"){
+            var temp = self.timingLabel.text!
+            println(temp)
+            var controller:TimerViewController = segue.destinationViewController as TimerViewController
+            controller.tempTimeLab = "Timing:\(temp)"
+        }
+        
+    }
+    
+    @IBAction func onClickStartButton(sender: UIButton) {
+        self.performSegueWithIdentifier("showTimer", sender: sender)
     }
 }
 
