@@ -14,24 +14,20 @@ class TimerViewController: UIViewController {
     
     
     @IBOutlet weak var exerciseLabel: UILabel!
-
     @IBOutlet weak var timingLab: UILabel!
-    var tempTimeLab:NSInteger = 0
     var seconds:NSInteger = 0
     var sec : NSInteger = 0
     var timer = NSTimer()
     
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-       // while(true){
-           // if(self.sec == 0){
-        self.seconds = self.tempTimeLab
         self.sec = self.seconds
                 self.getExercise()
                 self.lauchExercise()
-            //}
-       // }
     }
     
     func getExercise() -> NSString{
@@ -42,6 +38,9 @@ class TimerViewController: UIViewController {
     
     func lauchExercise(){
         self.exerciseLabel.text = getExercise()
+        myUtterance = AVSpeechUtterance(string: self.exerciseLabel.text)
+        myUtterance.rate = 0.2
+        synth.speakUtterance(myUtterance)
         self.sec = self.seconds
         self.timingLab.text = "Time: \(sec)"
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("subtractTime"), userInfo: nil, repeats: true)
@@ -65,6 +64,11 @@ class TimerViewController: UIViewController {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
+    }
+    
+    
+    @IBAction func onClickStopButton(sender: UIButton) {
+        timer.invalidate()
     }
 }
 

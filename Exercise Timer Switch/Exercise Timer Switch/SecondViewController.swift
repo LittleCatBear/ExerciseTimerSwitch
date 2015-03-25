@@ -46,7 +46,7 @@ class SecondViewController: UIViewController {
             }
             
             var controller:TimerViewController = segue.destinationViewController as TimerViewController
-            controller.tempTimeLab = temp
+            controller.seconds = temp
         }
         
     }

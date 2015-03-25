@@ -252,6 +252,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="onClickStopButton:" destination="Lzg-xa-e1d" eventType="touchUpInside" id="bVI-yA-MCd"/>
                                     <segue destination="lya-qv-fUs" kind="unwind" identifier="goToInit" unwindAction="goToInit:" id="QQg-yw-GLf"/>
                                 </connections>
                             </button>
