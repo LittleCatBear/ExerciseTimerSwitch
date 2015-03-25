@@ -17,6 +17,8 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.ExerciseTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -35,10 +37,16 @@ class SecondViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "showTimer"){
-            var temp = self.timingLabel.text!
-            println(temp)
+            var temp = 10
+            if(self.timingLabel.text != nil){
+                 temp = self.timingLabel.text!.toInt()!
+            }
+            else if (self.timingTextField.text != nil){
+                temp = self.timingTextField.text.toInt()!
+            }
+            
             var controller:TimerViewController = segue.destinationViewController as TimerViewController
-            controller.tempTimeLab = "Timing:\(temp)"
+            controller.tempTimeLab = temp
         }
         
     }
@@ -46,5 +54,20 @@ class SecondViewController: UIViewController {
     @IBAction func onClickStartButton(sender: UIButton) {
         self.performSegueWithIdentifier("showTimer", sender: sender)
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return globalExerciceTable.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell:UITableViewCell = self.ExerciseTableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
+        cell.textLabel?.text = globalExerciceTable[indexPath.row]
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+
 }
 
