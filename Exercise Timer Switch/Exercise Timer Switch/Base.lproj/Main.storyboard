@@ -40,6 +40,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9pv-A4-QxB" id="lCk-bK-eQB"/>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="RdZ-ZX-MoW"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shM-Zg-Xzq">
                                 <rect key="frame" x="280" y="106" width="40" height="40"/>
@@ -74,7 +78,7 @@
                     <tabBarItem key="tabBarItem" title="Exercises" image="first" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="ExerciseTextField" destination="Z1M-pX-UeZ" id="rGP-bC-6d7"/>
-                        <outlet property="exerciseTableView" destination="IQv-WM-jBd" id="lxz-SK-Ear"/>
+                        <outlet property="exerciseTableView" destination="IQv-WM-jBd" id="I5r-VR-kpD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

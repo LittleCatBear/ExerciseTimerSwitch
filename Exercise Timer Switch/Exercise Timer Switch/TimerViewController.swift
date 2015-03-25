@@ -17,11 +17,41 @@ class TimerViewController: UIViewController {
 
     @IBOutlet weak var timingLab: UILabel!
     var tempTimeLab:NSString = " "
+    var seconds:NSInteger = 0
+    var sec : NSInteger = 0
+    var timer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        while(true){
+            if(self.sec == 0){
+                self.getExercise()
+                //self.lauchExercise()
+            }
+        }
     }
+    
+    func getExercise(){
+        
+    }
+    
+    func lauchExercise(ex:NSString){
+        self.exerciseLabel.text = ex
+        self.sec = self.seconds
+        self.timingLab.text = "Time: \(seconds)"
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("subtractTime"), userInfo: nil, repeats: true)
+    }
+    
+    func subtractTime() {
+        sec--
+        timingLab.text = "Time: \(sec)"
+        
+        if(seconds == 0)  {
+            
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,6 +60,7 @@ class TimerViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         self.timingLab.text = tempTimeLab
+        self.seconds = self.tempTimeLab.integerValue
     }
 }
 
