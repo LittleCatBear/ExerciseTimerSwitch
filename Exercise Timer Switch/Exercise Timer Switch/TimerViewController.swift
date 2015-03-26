@@ -33,6 +33,9 @@ class TimerViewController: UIViewController {
     func getExercise() -> NSString{
         var total:UInt32 = UInt32(globalExerciceTable.count)
         var num = Int(arc4random_uniform(total))
+        if globalExerciceTable.isEmpty {
+            return "no data"
+        }
         return globalExerciceTable[num]
     }
     

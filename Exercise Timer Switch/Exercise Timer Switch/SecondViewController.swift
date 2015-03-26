@@ -17,6 +17,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.timingLabel.text = ""
         self.ExerciseTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,32 +28,55 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func onClickNewTiming(sender: UIButton) {
-        self.timingLabel.text = self.timingTextField.text
-    }
+   // @IBAction func onClickNewTiming(sender: UIButton) {
+      //  self.timingLabel.text = self.timingTextField.text
+     // self.timingLabel.textColor = UIColor.blackColor()
+   // }
 
     @IBAction func goToInit(segue:UIStoryboardSegue){
         NSLog("Called goToInit: unwind action")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       
         if (segue.identifier == "showTimer"){
-            var temp = 10
-            if(self.timingLabel.text != nil){
-                 temp = self.timingLabel.text!.toInt()!
+            var temp = 0
+            if(self.timingLabel.text != ""){
+                temp = self.timingLabel.text!.toInt()!
             }
-            else if (self.timingTextField.text != nil){
+            else if (self.timingTextField.text != ""){
                 temp = self.timingTextField.text.toInt()!
             }
             
             var controller:TimerViewController = segue.destinationViewController as TimerViewController
-            controller.seconds = temp
+                controller.seconds = temp
         }
-        
     }
     
     @IBAction func onClickStartButton(sender: UIButton) {
-        self.performSegueWithIdentifier("showTimer", sender: sender)
+        
+        if shouldPerformSegueWithIdentifier("showTimer", sender: sender){
+            self.performSegueWithIdentifier("showTimer", sender: sender)
+        }
+        else{
+            self.timingLabel.text = "Wrong data !"
+            self.timingLabel.textColor = UIColor(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0)
+        }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        var flag:Bool = false
+        if(self.timingLabel.text != ""){
+            if(self.timingLabel.text!.toInt() != nil){
+                flag = true
+            }
+        }
+        else if (self.timingTextField.text != ""){
+            if(self.timingTextField.text!.toInt() != nil){
+                flag = true
+            }
+        }
+        return flag
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

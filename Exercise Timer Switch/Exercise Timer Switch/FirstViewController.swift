@@ -11,12 +11,14 @@ import AVFoundation
 
 var globalExerciceTable:[String] = [String]()
 
-class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var exerciseTableView: UITableView!
     @IBOutlet weak var ExerciseTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        ExerciseTextField.delegate = self
          self.exerciseTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -52,5 +54,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
     }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+
 }
 
