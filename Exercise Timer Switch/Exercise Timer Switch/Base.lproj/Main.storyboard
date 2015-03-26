@@ -113,7 +113,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2C-dl-VW6">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2C-dl-VW6">
                                 <rect key="frame" x="280" y="126" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2Bm-fZ-PY2"/>
@@ -127,12 +127,12 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ioO-ec-JzT">
-                                <rect key="frame" x="36" y="68" width="528" height="30"/>
+                                <rect key="frame" x="36" y="68" width="528" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6m5-S2-XJ8">
-                                <rect key="frame" x="517" y="182" width="47" height="10"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6m5-S2-XJ8">
+                                <rect key="frame" x="517" y="162" width="47" height="30"/>
                                 <state key="normal" title="START">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -141,7 +141,7 @@
                                     <segue destination="Lzg-xa-e1d" kind="show" identifier="showTimer" id="RYf-u4-5AI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKm-1W-W5E">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKm-1W-W5E">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -172,6 +172,7 @@
                             <constraint firstItem="6m5-S2-XJ8" firstAttribute="top" secondItem="vLf-Tp-Xjr" secondAttribute="bottom" constant="-389" id="1P4-cV-ifT"/>
                             <constraint firstItem="ioO-ec-JzT" firstAttribute="top" secondItem="eIj-n0-1U8" secondAttribute="bottom" constant="8" symbolic="YES" id="1lD-Ok-r8f"/>
                             <constraint firstItem="vLf-Tp-Xjr" firstAttribute="top" secondItem="6m5-S2-XJ8" secondAttribute="bottom" constant="14" id="1s3-fr-ATc"/>
+                            <constraint firstItem="n2C-dl-VW6" firstAttribute="top" secondItem="ioO-ec-JzT" secondAttribute="bottom" constant="20" id="69h-G6-DlR"/>
                             <constraint firstAttribute="centerX" secondItem="ioO-ec-JzT" secondAttribute="centerX" id="77f-v9-izy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ioO-ec-JzT" secondAttribute="trailing" constant="20" id="91o-x7-FfE"/>
                             <constraint firstAttribute="centerX" secondItem="lKm-1W-W5E" secondAttribute="centerX" id="BA0-mT-oWE"/>
@@ -188,6 +189,7 @@
                             <constraint firstAttribute="centerX" secondItem="eIj-n0-1U8" secondAttribute="centerX" id="k68-tR-DaS"/>
                             <constraint firstItem="vLf-Tp-Xjr" firstAttribute="top" secondItem="lKm-1W-W5E" secondAttribute="bottom" constant="20" id="luJ-Bg-QuF"/>
                             <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="6m5-S2-XJ8" secondAttribute="bottom" constant="359" id="ok2-se-bUQ"/>
+                            <constraint firstItem="ioO-ec-JzT" firstAttribute="top" secondItem="eIj-n0-1U8" secondAttribute="bottom" constant="8" id="tSX-cj-ze4"/>
                             <constraint firstItem="ioO-ec-JzT" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="20" id="vDa-yw-Oqc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vLf-Tp-Xjr" secondAttribute="trailing" constant="-16" id="vUC-jI-2Qs"/>
                             <constraint firstItem="vLf-Tp-Xjr" firstAttribute="top" secondItem="n2C-dl-VW6" secondAttribute="bottom" constant="24" id="wlp-Xm-VdP"/>
@@ -199,8 +201,10 @@
                                 <exclude reference="wlp-Xm-VdP"/>
                                 <exclude reference="Gf7-pd-dSD"/>
                                 <exclude reference="wpg-8z-ijk"/>
+                                <exclude reference="gav-6T-83z"/>
                                 <exclude reference="1P4-cV-ifT"/>
                                 <exclude reference="KXx-7m-alZ"/>
+                                <exclude reference="frk-P8-cai"/>
                                 <exclude reference="ok2-se-bUQ"/>
                             </mask>
                         </variation>

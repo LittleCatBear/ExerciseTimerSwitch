@@ -91,6 +91,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true;
     }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        self.timingLabel.text = ""
+        self.timingLabel.textColor = UIColor.blackColor()
+    }
 
 }
 
