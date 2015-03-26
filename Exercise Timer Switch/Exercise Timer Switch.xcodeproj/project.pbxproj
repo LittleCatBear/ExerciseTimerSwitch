@@ -15,6 +15,7 @@
 		E32222B61AC34A1F00E07614 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E32222B41AC34A1F00E07614 /* LaunchScreen.xib */; };
 		E32222C21AC34A1F00E07614 /* Exercise_Timer_SwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32222C11AC34A1F00E07614 /* Exercise_Timer_SwitchTests.swift */; };
 		E32222CC1AC3530100E07614 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32222CB1AC3530100E07614 /* TimerViewController.swift */; };
+		E32222CE1AC3C9D100E07614 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32222CD1AC3C9D100E07614 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		E32222C01AC34A1F00E07614 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E32222C11AC34A1F00E07614 /* Exercise_Timer_SwitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise_Timer_SwitchTests.swift; sourceTree = "<group>"; };
 		E32222CB1AC3530100E07614 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		E32222CD1AC3C9D100E07614 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32222CE1AC3C9D100E07614 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		E322229B1AC34A1F00E07614 = {
 			isa = PBXGroup;
 			children = (
+				E32222CD1AC3C9D100E07614 /* AVFoundation.framework */,
 				E32222A61AC34A1F00E07614 /* Exercise Timer Switch */,
 				E32222BE1AC34A1F00E07614 /* Exercise Timer SwitchTests */,
 				E32222A51AC34A1F00E07614 /* Products */,

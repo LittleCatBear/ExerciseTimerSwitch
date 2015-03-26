@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var ExerciseTableView: UITableView!
     @IBOutlet weak var timingTextField: UITextField!
@@ -17,6 +17,7 @@ class SecondViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.timingTextField.delegate = self
         self.timingLabel.text = ""
         self.ExerciseTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
@@ -34,7 +35,8 @@ class SecondViewController: UIViewController {
    // }
 
     @IBAction func goToInit(segue:UIStoryboardSegue){
-        NSLog("Called goToInit: unwind action")
+        self.timingLabel.text = ""
+        self.timingLabel.textColor = UIColor.blackColor()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -64,7 +66,7 @@ class SecondViewController: UIViewController {
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         var flag:Bool = false
         if (self.timingTextField.text != ""){
-            if(self.timingTextField.text!.toInt() != nil && self.timingTextField.text.toInt() > 1){
+            if(self.timingTextField.text!.toInt() != nil && self.timingTextField.text.toInt()       > 1){
                 flag = true
             }
         }
@@ -82,7 +84,12 @@ class SecondViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true;
     }
 
 }
