@@ -41,10 +41,7 @@ class SecondViewController: UIViewController {
        
         if (segue.identifier == "showTimer"){
             var temp = 0
-            if(self.timingLabel.text != ""){
-                temp = self.timingLabel.text!.toInt()!
-            }
-            else if (self.timingTextField.text != ""){
+            if (self.timingTextField.text != ""){
                 temp = self.timingTextField.text.toInt()!
             }
             
@@ -66,13 +63,8 @@ class SecondViewController: UIViewController {
     
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         var flag:Bool = false
-        if(self.timingLabel.text != ""){
-            if(self.timingLabel.text!.toInt() != nil){
-                flag = true
-            }
-        }
-        else if (self.timingTextField.text != ""){
-            if(self.timingTextField.text!.toInt() != nil){
+        if (self.timingTextField.text != ""){
+            if(self.timingTextField.text!.toInt() != nil && self.timingTextField.text.toInt() > 1){
                 flag = true
             }
         }
