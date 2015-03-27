@@ -41,7 +41,9 @@ class TimerViewController: UIViewController {
     
     func lauchExercise(){
         self.exerciseLabel.text = getExercise()
-       // self.exerciseLabel.sizeToFit()
+        self.exerciseLabel.sizeToFit()
+        
+        self.exerciseLabel.numberOfLines = 0
         self.exerciseLabel.fadeOut(duration: 2, delay: 0.0, completion: {
             (finished:Bool) -> Void in
             self.exerciseLabel.fadeIn(duration: 2, delay: 0.0)
