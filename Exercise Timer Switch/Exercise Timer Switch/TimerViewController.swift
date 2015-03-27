@@ -26,8 +26,7 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sec = self.seconds
-                self.getExercise()
-                self.lauchExercise()
+        self.lauchExercise()
     }
     
     func getExercise() -> NSString{
