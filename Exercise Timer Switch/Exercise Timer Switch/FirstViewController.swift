@@ -29,9 +29,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     @IBAction func onClickAddExercise(sender: UIButton) {
-        globalExerciceTable.append(self.ExerciseTextField.text)
-        self.ExerciseTextField.text = ""
-        self.exerciseTableView.reloadData()
+        if (self.ExerciseTextField.text != ""){
+            globalExerciceTable.append(self.ExerciseTextField.text)
+            self.ExerciseTextField.text = ""
+            self.exerciseTableView.reloadData()
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

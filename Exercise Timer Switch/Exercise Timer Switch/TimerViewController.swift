@@ -44,9 +44,9 @@ class TimerViewController: UIViewController {
         self.exerciseLabel.sizeToFit()
         
         self.exerciseLabel.numberOfLines = 0
-        self.exerciseLabel.fadeOut(duration: 2, delay: 0.0, completion: {
+        self.exerciseLabel.fadeOut(duration: 0.5, delay: 0.0, completion: {
             (finished:Bool) -> Void in
-            self.exerciseLabel.fadeIn(duration: 2, delay: 0.0)
+            self.exerciseLabel.fadeIn(duration: 0.5, delay: 0.0)
         })
         
         myUtterance = AVSpeechUtterance(string: self.exerciseLabel.text)

@@ -272,9 +272,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-bD-6C2">
-                                <rect key="frame" x="279" y="501" width="41" height="30"/>
-                                <state key="normal" title="STOP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-bD-6C2">
+                                <rect key="frame" x="243" y="420" width="113" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="113" id="9u9-jR-M1i"/>
+                                    <constraint firstAttribute="width" constant="113" id="keH-tD-fGJ"/>
+                                </constraints>
+                                <state key="normal" image="stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -285,11 +289,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Vcs-bD-6C2" secondAttribute="centerX" id="8R2-Yv-Ind"/>
+                            <constraint firstAttribute="centerX" secondItem="Vcs-bD-6C2" secondAttribute="centerX" constant="1" id="8R2-Yv-Ind"/>
                             <constraint firstItem="0gK-ch-YVs" firstAttribute="leading" secondItem="wIp-P6-aEl" secondAttribute="leadingMargin" id="9gg-pl-ocv"/>
                             <constraint firstItem="7st-9m-pqh" firstAttribute="leading" secondItem="wIp-P6-aEl" secondAttribute="leadingMargin" id="AFe-yW-pxX"/>
                             <constraint firstItem="4Fx-BS-zgu" firstAttribute="top" secondItem="yT6-kg-Pf7" secondAttribute="bottom" constant="20" id="Ce2-tL-gvL"/>
-                            <constraint firstItem="Wfa-TO-s4b" firstAttribute="top" secondItem="Vcs-bD-6C2" secondAttribute="bottom" constant="20" id="Da0-TX-61b"/>
+                            <constraint firstItem="Wfa-TO-s4b" firstAttribute="top" secondItem="Vcs-bD-6C2" secondAttribute="bottom" constant="18" id="Da0-TX-61b"/>
                             <constraint firstAttribute="centerX" secondItem="0gK-ch-YVs" secondAttribute="centerX" id="Fir-Bn-y39"/>
                             <constraint firstAttribute="centerY" secondItem="0gK-ch-YVs" secondAttribute="centerY" id="LOT-7A-O7D"/>
                             <constraint firstAttribute="centerX" secondItem="4Fx-BS-zgu" secondAttribute="centerX" id="NFI-Hg-k4J"/>
@@ -330,5 +334,6 @@
     <resources>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="stop" width="214" height="216"/>
     </resources>
 </document>
