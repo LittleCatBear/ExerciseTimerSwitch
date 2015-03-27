@@ -41,6 +41,12 @@ class TimerViewController: UIViewController {
     
     func lauchExercise(){
         self.exerciseLabel.text = getExercise()
+        self.exerciseLabel.sizeToFit()
+        self.exerciseLabel.fadeOut(duration: 0.5, delay: 0.0, completion: {
+            (finished:Bool) -> Void in
+            self.exerciseLabel.fadeIn(duration: 0.5, delay: 0.0)
+        })
+        
         myUtterance = AVSpeechUtterance(string: self.exerciseLabel.text)
         myUtterance.rate = 0.1
         synth.speakUtterance(myUtterance)
@@ -58,6 +64,19 @@ class TimerViewController: UIViewController {
             lauchExercise()
             
         }
+    }
+
+    func fadeIn() {
+        // Move our fade out code from earlier
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseIn, animations: {
+            self.alpha = 1.0 // Instead of a specific instance of, say, birdTypeLabel, we simply set [thisInstance] (ie, self)'s alpha
+            }, completion: nil)
+    }
+    
+    func fadeOut() {
+        UIView.animateWithDuration(0.5, delay: 0.0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
+            self.alpha = 0.5
+            }, completion: nil)
     }
     
     

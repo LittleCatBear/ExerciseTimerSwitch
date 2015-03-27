@@ -16,6 +16,7 @@
 		E32222C21AC34A1F00E07614 /* Exercise_Timer_SwitchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32222C11AC34A1F00E07614 /* Exercise_Timer_SwitchTests.swift */; };
 		E32222CC1AC3530100E07614 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32222CB1AC3530100E07614 /* TimerViewController.swift */; };
 		E32222CE1AC3C9D100E07614 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32222CD1AC3C9D100E07614 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E32222D01AC4F95C00E07614 /* UIViewAnimationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32222CF1AC4F95C00E07614 /* UIViewAnimationExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		E32222C11AC34A1F00E07614 /* Exercise_Timer_SwitchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise_Timer_SwitchTests.swift; sourceTree = "<group>"; };
 		E32222CB1AC3530100E07614 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		E32222CD1AC3C9D100E07614 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E32222CF1AC4F95C00E07614 /* UIViewAnimationExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimationExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				E32222AB1AC34A1F00E07614 /* FirstViewController.swift */,
 				E32222AD1AC34A1F00E07614 /* SecondViewController.swift */,
 				E32222CB1AC3530100E07614 /* TimerViewController.swift */,
+				E32222CF1AC4F95C00E07614 /* UIViewAnimationExt.swift */,
 				E32222AF1AC34A1F00E07614 /* Main.storyboard */,
 				E32222B21AC34A1F00E07614 /* Images.xcassets */,
 				E32222B41AC34A1F00E07614 /* LaunchScreen.xib */,
@@ -222,6 +225,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E32222D01AC4F95C00E07614 /* UIViewAnimationExt.swift in Sources */,
 				E32222CC1AC3530100E07614 /* TimerViewController.swift in Sources */,
 				E32222AE1AC34A1F00E07614 /* SecondViewController.swift in Sources */,
 				E32222AA1AC34A1F00E07614 /* AppDelegate.swift in Sources */,
