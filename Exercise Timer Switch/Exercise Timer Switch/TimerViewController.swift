@@ -27,7 +27,7 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         self.sec = self.seconds
-        self.lauchExercise()
+        self.lauchExercise(Float(sec))
     }
     
     func getExercise() -> NSString{
@@ -39,16 +39,20 @@ class TimerViewController: UIViewController {
         return globalExerciceTable[num]
     }
     
-    func lauchExercise(){
+    func lauchExercise(timing:Float){
+        var t = NSTimeInterval(timing-0.2)
+        
         self.exerciseLabel.text = getExercise()
         self.exerciseLabel.sizeToFit()
         
         self.exerciseLabel.numberOfLines = 0
-        self.exerciseLabel.fadeIn(duration: 0.1, delay: 0.0, completion: {
+       
+        self.exerciseLabel.fadeIn(duration: 1.0, delay: 0.0, completion: {
             (finished:Bool) -> Void in
-            self.exerciseLabel.fadeOut(duration: 0.1, delay: 1.8)
+            self.exerciseLabel.fadeOut(duration: 0.3, delay: t)
         })
-        
+
+      //  self.exerciseLabel.fadeIn(duration: 0.3, delay: 0.0)
         myUtterance = AVSpeechUtterance(string: self.exerciseLabel.text)
         myUtterance.rate = 0.1
         synth.speakUtterance(myUtterance)
@@ -63,7 +67,7 @@ class TimerViewController: UIViewController {
         
         if(sec == -1)  {
             timer.invalidate()
-            lauchExercise()
+            lauchExercise(Float(seconds))
             
         }
     }
