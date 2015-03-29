@@ -73,6 +73,7 @@ class TimerViewController: UIViewController {
         roundLabel.text = "Round: \(tempRounds)"
         if(tempRounds == -1){
             self.exerciseLabel.text = "End of Rounds"
+            roundLabel.text = "Round: 0"
             timer.invalidate()
         }else if(sec == -1)  {
                 timer.invalidate()
