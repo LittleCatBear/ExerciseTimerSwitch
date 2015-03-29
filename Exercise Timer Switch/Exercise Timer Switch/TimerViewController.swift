@@ -71,11 +71,15 @@ class TimerViewController: UIViewController {
         tempRounds--
         timingLab.text = "Time: \(sec)"
         roundLabel.text = "Round: \(tempRounds)"
-        if(tempRounds == -1){
-            self.exerciseLabel.text = "End of Rounds"
-            roundLabel.text = "Round: 0"
+        if(tempRounds == 0){
+            self.timingLab.text = "Time: 0"
+            self.exerciseLabel.text = "Time completed"
+            myUtterance = AVSpeechUtterance(string: self.exerciseLabel.text)
+            myUtterance.rate = 0.1
+            synth.speakUtterance(myUtterance)
+            //roundLabel.text = "Round: 0"
             timer.invalidate()
-        }else if(sec == -1)  {
+        }else if(sec == 0)  {
                 timer.invalidate()
                 lauchExercise(Float(seconds))
         }

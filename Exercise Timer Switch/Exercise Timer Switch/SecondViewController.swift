@@ -52,7 +52,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
                 temp = self.timingTextField.text.toInt()!
             }
             if (self.roundTextField.text != ""){
-                if(self.roundTextField.text!.toInt() != nil && self.roundTextField.text.toInt() > 1){
+                if(self.roundTextField.text!.toInt() != nil && self.roundTextField.text.toInt() > 0){
                     tempRound = self.roundTextField.text!.toInt()!
                 }
             }
@@ -77,7 +77,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         var flag:Bool = false
         if (self.timingTextField.text != ""){
-            if(self.timingTextField.text!.toInt() != nil && self.timingTextField.text.toInt() > 1){
+            if(self.timingTextField.text!.toInt() != nil && self.timingTextField.text.toInt() > 0){
                 flag = true
             }
         }
