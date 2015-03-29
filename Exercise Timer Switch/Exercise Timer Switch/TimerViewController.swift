@@ -13,10 +13,13 @@ import UIKit
 class TimerViewController: UIViewController {
     
     
+    @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var exerciseLabel: UILabel!
     @IBOutlet weak var timingLab: UILabel!
     var seconds:NSInteger = 0
     var sec : NSInteger = 0
+    var totalRounds:NSInteger = 0
+    var tempRounds:NSInteger = 0
     var timer = NSTimer()
     
     let synth = AVSpeechSynthesizer()
@@ -27,6 +30,7 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         self.sec = self.seconds
+        self.tempRounds = self.totalRounds
         self.lauchExercise(Float(sec))
     }
     
@@ -46,12 +50,7 @@ class TimerViewController: UIViewController {
         self.exerciseLabel.sizeToFit()
         
         self.exerciseLabel.numberOfLines = 0
-       /*
-        self.exerciseLabel.fadeIn(duration: 1.0, delay: 0.0, completion: {
-            (finished:Bool) -> Void in
-            self.exerciseLabel.fadeOut(duration: 1.0, delay: 0.0)
-        })
-        */
+    
         self.exerciseLabel.fadeIn(completion: {
             (finished:Bool) -> Void in
             self.exerciseLabel.fadeOut()
@@ -61,18 +60,23 @@ class TimerViewController: UIViewController {
         myUtterance.rate = 0.1
         synth.speakUtterance(myUtterance)
         self.sec = self.seconds
+        //self.tempRounds = totalRounds
         self.timingLab.text = "Time: \(sec)"
+        self.roundLabel.text = "Round: \(tempRounds)"
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("subtractTime"), userInfo: nil, repeats: true)
     }
     
     func subtractTime() {
         sec--
+        tempRounds--
         timingLab.text = "Time: \(sec)"
-        
-        if(sec == -1)  {
+        roundLabel.text = "Round: \(tempRounds)"
+        if(tempRounds == -1){
+            self.exerciseLabel.text = "End of Rounds"
             timer.invalidate()
-            lauchExercise(Float(seconds))
-            
+        }else if(sec == -1)  {
+                timer.invalidate()
+                lauchExercise(Float(seconds))
         }
     }
     
@@ -84,9 +88,15 @@ class TimerViewController: UIViewController {
         super.viewWillAppear(true)
     }
     
-    
     @IBAction func onClickStopButton(sender: UIButton) {
         timer.invalidate()
+    }
+    
+    @IBAction func onClickRepeatButton(sender: UIButton) {
+        timer.invalidate()
+        tempRounds = totalRounds
+        lauchExercise(Float(seconds))
+        
     }
 }
 

@@ -13,7 +13,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ExerciseTableView: UITableView!
     @IBOutlet weak var timingTextField: UITextField!
     @IBOutlet weak var timingLabel: UILabel!
-    
+    @IBOutlet weak var roundTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,12 +47,19 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
        
         if (segue.identifier == "showTimer"){
             var temp = 0
+            var tempRound = 1
             if (self.timingTextField.text != ""){
                 temp = self.timingTextField.text.toInt()!
             }
+            if (self.roundTextField.text != ""){
+                if(self.roundTextField.text!.toInt() != nil && self.roundTextField.text.toInt() > 1){
+                    tempRound = self.roundTextField.text!.toInt()!
+                }
+            }
             
             var controller:TimerViewController = segue.destinationViewController as TimerViewController
-                controller.seconds = temp
+            controller.seconds = temp
+            controller.totalRounds = tempRound
         }
     }
     
@@ -70,7 +77,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
         var flag:Bool = false
         if (self.timingTextField.text != ""){
-            if(self.timingTextField.text!.toInt() != nil && self.timingTextField.text.toInt()       > 1){
+            if(self.timingTextField.text!.toInt() != nil && self.timingTextField.text.toInt() > 1){
                 flag = true
             }
         }
