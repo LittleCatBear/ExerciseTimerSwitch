@@ -14,10 +14,14 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timingTextField: UITextField!
     @IBOutlet weak var timingLabel: UILabel!
     @IBOutlet weak var roundTextField: UITextField!
+    @IBOutlet weak var countDownTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.timingTextField.delegate = self
+        self.roundTextField.delegate = self
+        self.countDownTextField.delegate = self
+        self.countDownTextField.text = "5"
         self.timingLabel.text = ""
         self.ExerciseTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
@@ -47,6 +51,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
        
         if (segue.identifier == "showTimer"){
             var temp = 0
+            var tempCd = 5
             var tempRound = 1
             if (self.timingTextField.text != ""){
                 temp = self.timingTextField.text.toInt()!
@@ -56,10 +61,17 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
                     tempRound = self.roundTextField.text!.toInt()!
                 }
             }
+            if (self.countDownTextField.text != ""){
+                if(self.countDownTextField.text!.toInt() != nil && self.countDownTextField.text.toInt() > 0){
+                    tempCd = self.countDownTextField.text!.toInt()!
+                }
+            }
+
             
             var controller:TimerViewController = segue.destinationViewController as TimerViewController
             controller.seconds = temp
             controller.totalRounds = tempRound
+            controller.cd = tempCd
         }
     }
     
@@ -69,7 +81,7 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
             self.performSegueWithIdentifier("showTimer", sender: sender)
         }
         else{
-            self.timingLabel.text = "Wrong data !"
+            self.timingLabel.text = "Wrong data for Switch !"
             self.timingLabel.textColor = UIColor(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0)
         }
     }
