@@ -143,12 +143,12 @@ class TimerViewController: UIViewController {
     @IBAction func onClickPauseButton(sender: UIButton) {
         if(flag == false){
             flag = true
-            pauseButton.setTitle("Resume", forState: UIControlState.Normal)
+            pauseButton.setImage(UIImage(named: "start.png"), forState: UIControlState.Normal)
             timer.invalidate()
         } else{
             lauchExercise(Float(sec))
             flag =  false
-            pauseButton.setTitle("Pause", forState: UIControlState.Normal)
+            pauseButton.setImage(UIImage(named: "pause.png"), forState: UIControlState.Normal)
            
         }
     }

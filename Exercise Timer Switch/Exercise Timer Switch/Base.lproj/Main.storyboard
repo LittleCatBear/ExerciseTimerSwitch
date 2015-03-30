@@ -131,9 +131,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6m5-S2-XJ8">
-                                <rect key="frame" x="517" y="154" width="47" height="30"/>
-                                <state key="normal" title="START">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6m5-S2-XJ8">
+                                <rect key="frame" x="514" y="134" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="iIG-yK-olL"/>
+                                    <constraint firstAttribute="height" constant="50" id="q9h-vj-cb4"/>
+                                </constraints>
+                                <state key="normal" image="start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -270,8 +274,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-ch-YVs">
-                                <rect key="frame" x="16" y="264" width="568" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-ch-YVs">
                                 <fontDescription key="fontDescription" name="Herculanum" family="Herculanum" pointSize="60"/>
                                 <color key="textColor" red="0.64497296677695382" green="0.09571218873699984" blue="0.11788553724128095" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -402,6 +405,7 @@
         <image name="liste" width="50" height="50"/>
         <image name="pause" width="119" height="118"/>
         <image name="repeat" width="120" height="108"/>
+        <image name="start" width="109" height="109"/>
         <image name="stop" width="106" height="107"/>
     </resources>
 </document>
