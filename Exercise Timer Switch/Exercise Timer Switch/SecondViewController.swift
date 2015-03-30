@@ -64,7 +64,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
             if (self.countDownTextField.text != ""){
                 if(self.countDownTextField.text!.toInt() != nil && self.countDownTextField.text.toInt() > 0){
                     tempCd = self.countDownTextField.text!.toInt()!
+                } else{
+                    tempCd = 0
                 }
+            } else{
+                tempCd = 0
             }
 
             

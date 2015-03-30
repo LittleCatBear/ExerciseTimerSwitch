@@ -411,7 +411,7 @@
         <image name="chrono" width="44" height="50"/>
         <image name="liste" width="50" height="50"/>
         <image name="pause" width="119" height="118"/>
-        <image name="repeat" width="120" height="108"/>
+        <image name="repeat" width="122" height="122"/>
         <image name="start" width="119" height="119"/>
         <image name="stop" width="119" height="119"/>
     </resources>

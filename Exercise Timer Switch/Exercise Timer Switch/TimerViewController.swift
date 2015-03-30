@@ -24,7 +24,7 @@ class TimerViewController: UIViewController {
     var tempRounds:NSInteger = 0
     var timer = NSTimer()
     var countdown = NSTimer()
-    var cd:NSInteger = 5
+    var cd:NSInteger = 0
     // flag false: button pause not clicked
     // flag true: button pause clicked, waiting for resume
     var flag:Bool = false
@@ -38,11 +38,15 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         repeatButton.enabled = false
         pauseButton.enabled = false
+        roundLabel.text = "Time left"
+        timingLab.text = "Switch"
         self.sec = self.seconds
         self.tempRounds = self.totalRounds
-        countdown = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countDownSub"), userInfo: nil, repeats: true)
-
-       // self.lauchExercise(Float(sec))
+        if(cd > 0){
+            countdown = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countDownSub"), userInfo: nil, repeats: true)
+        } else{
+            self.lauchExercise(Float(sec))
+        }
     }
     
     func getExercise() -> NSString{
@@ -71,8 +75,8 @@ class TimerViewController: UIViewController {
         speech(self.exerciseLabel.text!)
         self.sec = self.seconds
         //self.tempRounds = totalRounds
-        self.timingLab.text = "Time: \(sec)"
-        self.roundLabel.text = "Round: \(tempRounds)"
+        self.timingLab.text = "Switch: \(sec)"
+        self.roundLabel.text = "Time left: \(tempRounds)"
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("subtractTime"), userInfo: nil, repeats: true)
     }
     
@@ -100,10 +104,10 @@ class TimerViewController: UIViewController {
     func subtractTime() {
         sec--
         tempRounds--
-        timingLab.text = "Time: \(sec)"
-        roundLabel.text = "Round: \(tempRounds)"
+        timingLab.text = "Switch: \(sec)"
+        roundLabel.text = "Time left: \(tempRounds)"
         if(tempRounds == 0){
-            self.timingLab.text = "Time: 0"
+            self.timingLab.text = "Time left: 0"
             self.exerciseLabel.text = "Time completed"
             speech(self.exerciseLabel.text!)
             timer.invalidate()
