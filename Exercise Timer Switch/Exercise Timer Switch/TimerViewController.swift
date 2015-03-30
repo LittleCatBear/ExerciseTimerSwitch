@@ -17,6 +17,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var exerciseLabel: UILabel!
     @IBOutlet weak var timingLab: UILabel!
     @IBOutlet weak var repeatButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
     var seconds:NSInteger = 0
     var sec : NSInteger = 0
     var totalRounds:NSInteger = 0
@@ -24,6 +25,10 @@ class TimerViewController: UIViewController {
     var timer = NSTimer()
     var countdown = NSTimer()
     var cd:NSInteger = 5
+    // flag false: button pause not clicked
+    // flag true: button pause clicked, waiting for resume
+    var flag:Bool = false
+    
     
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
@@ -32,6 +37,7 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         repeatButton.enabled = false
+        pauseButton.enabled = false
         self.sec = self.seconds
         self.tempRounds = self.totalRounds
         countdown = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countDownSub"), userInfo: nil, repeats: true)
@@ -49,6 +55,7 @@ class TimerViewController: UIViewController {
     }
     
     func lauchExercise(timing:Float){
+        pauseButton.enabled = true
         var t = NSTimeInterval(timing-0.2)
         
         self.exerciseLabel.text = getExercise()
@@ -101,6 +108,7 @@ class TimerViewController: UIViewController {
             speech(self.exerciseLabel.text!)
             timer.invalidate()
             repeatButton.enabled = true
+            pauseButton.enabled = false
         }else if(sec == 0)  {
                 timer.invalidate()
                 lauchExercise(Float(seconds))
@@ -130,6 +138,19 @@ class TimerViewController: UIViewController {
 
        // lauchExercise(Float(seconds))
         
+    }
+    
+    @IBAction func onClickPauseButton(sender: UIButton) {
+        if(flag == false){
+            flag = true
+            pauseButton.setTitle("Resume", forState: UIControlState.Normal)
+            timer.invalidate()
+        } else{
+            lauchExercise(Float(sec))
+            flag =  false
+            pauseButton.setTitle("Pause", forState: UIControlState.Normal)
+           
+        }
     }
 }
 

@@ -270,8 +270,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-ch-YVs">
-                                <rect key="frame" x="16" y="264.5" width="568" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-ch-YVs">
+                                <rect key="frame" x="16" y="264" width="568" height="70"/>
                                 <fontDescription key="fontDescription" name="Herculanum" family="Herculanum" pointSize="60"/>
                                 <color key="textColor" red="0.64497296677695382" green="0.09571218873699984" blue="0.11788553724128095" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -282,11 +282,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-bD-6C2">
-                                <rect key="frame" x="261" y="458" width="75" height="75"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-bD-6C2">
+                                <rect key="frame" x="273" y="483" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="9u9-jR-M1i"/>
-                                    <constraint firstAttribute="width" constant="75" id="keH-tD-fGJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="9u9-jR-M1i"/>
+                                    <constraint firstAttribute="width" constant="50" id="keH-tD-fGJ"/>
                                 </constraints>
                                 <state key="normal" image="stop">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -307,22 +307,41 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE0-dP-iQM">
-                                <rect key="frame" x="535" y="501" width="49" height="30"/>
-                                <state key="normal" title="Repeat">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qE0-dP-iQM">
+                                <rect key="frame" x="514" y="481" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ls9-zR-oRi"/>
+                                    <constraint firstAttribute="width" constant="50" id="Vyu-xW-AE3"/>
+                                </constraints>
+                                <state key="normal" image="repeat">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="onClickRepeatButton:" destination="Lzg-xa-e1d" eventType="touchUpInside" id="1Jb-Hb-03f"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rh-ev-Re2">
+                                <rect key="frame" x="36" y="481" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="XRE-pp-3LE"/>
+                                    <constraint firstAttribute="height" constant="50" id="b1I-4s-cvU"/>
+                                </constraints>
+                                <state key="normal" image="pause">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickPauseButton:" destination="Lzg-xa-e1d" eventType="touchUpInside" id="C4X-aZ-sB3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="qE0-dP-iQM" secondAttribute="trailing" constant="20" id="3iE-st-6xa"/>
                             <constraint firstAttribute="centerX" secondItem="Vcs-bD-6C2" secondAttribute="centerX" constant="1" id="8R2-Yv-Ind"/>
                             <constraint firstItem="0gK-ch-YVs" firstAttribute="leading" secondItem="wIp-P6-aEl" secondAttribute="leadingMargin" id="9gg-pl-ocv"/>
                             <constraint firstItem="7st-9m-pqh" firstAttribute="leading" secondItem="wIp-P6-aEl" secondAttribute="leadingMargin" id="AFe-yW-pxX"/>
                             <constraint firstItem="6At-Xk-nkx" firstAttribute="top" secondItem="yT6-kg-Pf7" secondAttribute="bottom" constant="20" id="AJp-Yy-l2H"/>
+                            <constraint firstItem="Wfa-TO-s4b" firstAttribute="top" secondItem="0Rh-ev-Re2" secondAttribute="bottom" constant="20" id="Anv-VQ-gcd"/>
                             <constraint firstItem="4Fx-BS-zgu" firstAttribute="top" secondItem="yT6-kg-Pf7" secondAttribute="bottom" constant="60" id="Ce2-tL-gvL"/>
                             <constraint firstItem="Wfa-TO-s4b" firstAttribute="top" secondItem="Vcs-bD-6C2" secondAttribute="bottom" constant="18" id="Da0-TX-61b"/>
                             <constraint firstAttribute="centerX" secondItem="0gK-ch-YVs" secondAttribute="centerX" id="Fir-Bn-y39"/>
@@ -332,11 +351,22 @@
                             <constraint firstItem="0gK-ch-YVs" firstAttribute="trailing" secondItem="wIp-P6-aEl" secondAttribute="trailingMargin" id="RAV-jH-tfL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qE0-dP-iQM" secondAttribute="trailing" id="cT4-fW-Pgk"/>
                             <constraint firstItem="6At-Xk-nkx" firstAttribute="trailing" secondItem="wIp-P6-aEl" secondAttribute="trailingMargin" id="euR-1m-SHA"/>
+                            <constraint firstItem="0Rh-ev-Re2" firstAttribute="leading" secondItem="wIp-P6-aEl" secondAttribute="leadingMargin" constant="20" id="gRN-uo-Hhn"/>
+                            <constraint firstItem="qE0-dP-iQM" firstAttribute="trailing" secondItem="wIp-P6-aEl" secondAttribute="trailingMargin" constant="20" id="mSy-6g-gUG"/>
+                            <constraint firstItem="0Rh-ev-Re2" firstAttribute="leading" secondItem="wIp-P6-aEl" secondAttribute="leadingMargin" id="uaG-2j-2DD"/>
                             <constraint firstItem="7st-9m-pqh" firstAttribute="top" secondItem="yT6-kg-Pf7" secondAttribute="bottom" constant="20" id="z0F-2s-dFk"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="uaG-2j-2DD"/>
+                                <exclude reference="cT4-fW-Pgk"/>
+                                <exclude reference="mSy-6g-gUG"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="exerciseLabel" destination="0gK-ch-YVs" id="Tac-08-5DO"/>
+                        <outlet property="pauseButton" destination="0Rh-ev-Re2" id="cOj-Hw-yEU"/>
                         <outlet property="repeatButton" destination="qE0-dP-iQM" id="XT6-A1-heS"/>
                         <outlet property="roundLabel" destination="6At-Xk-nkx" id="d9G-qs-Wmw"/>
                         <outlet property="timingLab" destination="7st-9m-pqh" id="2w9-Rv-ad2"/>
@@ -370,6 +400,8 @@
     <resources>
         <image name="chrono" width="44" height="50"/>
         <image name="liste" width="50" height="50"/>
+        <image name="pause" width="119" height="118"/>
+        <image name="repeat" width="120" height="108"/>
         <image name="stop" width="106" height="107"/>
     </resources>
 </document>
