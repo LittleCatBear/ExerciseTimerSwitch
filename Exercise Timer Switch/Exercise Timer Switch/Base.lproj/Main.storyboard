@@ -270,8 +270,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-ch-YVs">
-                                <rect key="frame" x="16" y="255" width="568" height="89"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-ch-YVs">
+                                <rect key="frame" x="16" y="264.5" width="568" height="70"/>
                                 <fontDescription key="fontDescription" name="Herculanum" family="Herculanum" pointSize="60"/>
                                 <color key="textColor" red="0.64497296677695382" green="0.09571218873699984" blue="0.11788553724128095" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -283,7 +283,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcs-bD-6C2">
-                                <rect key="frame" x="261.5" y="458" width="75" height="75"/>
+                                <rect key="frame" x="261" y="458" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="9u9-jR-M1i"/>
                                     <constraint firstAttribute="width" constant="75" id="keH-tD-fGJ"/>
@@ -337,6 +337,7 @@
                     </view>
                     <connections>
                         <outlet property="exerciseLabel" destination="0gK-ch-YVs" id="Tac-08-5DO"/>
+                        <outlet property="repeatButton" destination="qE0-dP-iQM" id="XT6-A1-heS"/>
                         <outlet property="roundLabel" destination="6At-Xk-nkx" id="d9G-qs-Wmw"/>
                         <outlet property="timingLab" destination="7st-9m-pqh" id="2w9-Rv-ad2"/>
                     </connections>

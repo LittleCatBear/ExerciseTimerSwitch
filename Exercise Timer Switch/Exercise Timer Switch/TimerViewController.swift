@@ -16,11 +16,14 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var roundLabel: UILabel!
     @IBOutlet weak var exerciseLabel: UILabel!
     @IBOutlet weak var timingLab: UILabel!
+    @IBOutlet weak var repeatButton: UIButton!
     var seconds:NSInteger = 0
     var sec : NSInteger = 0
     var totalRounds:NSInteger = 0
     var tempRounds:NSInteger = 0
     var timer = NSTimer()
+    var countdown = NSTimer()
+    var cd:NSInteger = 5
     
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
@@ -28,10 +31,12 @@ class TimerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        repeatButton.enabled = false
         self.sec = self.seconds
         self.tempRounds = self.totalRounds
-        self.lauchExercise(Float(sec))
+        countdown = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countDownSub"), userInfo: nil, repeats: true)
+
+       // self.lauchExercise(Float(sec))
     }
     
     func getExercise() -> NSString{
@@ -56,14 +61,33 @@ class TimerViewController: UIViewController {
             self.exerciseLabel.fadeOut()
         })
        // self.exerciseLabel.fadeIn(duration: 1.0, delay: 0.0)
-        myUtterance = AVSpeechUtterance(string: self.exerciseLabel.text)
-        myUtterance.rate = 0.1
-        synth.speakUtterance(myUtterance)
+        speech(self.exerciseLabel.text!)
         self.sec = self.seconds
         //self.tempRounds = totalRounds
         self.timingLab.text = "Time: \(sec)"
         self.roundLabel.text = "Round: \(tempRounds)"
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("subtractTime"), userInfo: nil, repeats: true)
+    }
+    
+    func speech(say:NSString){
+        myUtterance = AVSpeechUtterance(string:say)
+        myUtterance.rate = 0.1
+        synth.speakUtterance(myUtterance)
+    }
+    
+    func countDownSub(){
+        
+        if(cd == -1){
+            countdown.invalidate()
+            lauchExercise(Float(seconds))
+        } else if(cd == 0){
+            self.exerciseLabel.text = "Begin"
+            speech(self.exerciseLabel.text!)
+        } else{
+            self.exerciseLabel.text = "\(cd)"
+            speech(self.exerciseLabel.text!)
+        }
+        cd--
     }
     
     func subtractTime() {
@@ -74,11 +98,9 @@ class TimerViewController: UIViewController {
         if(tempRounds == 0){
             self.timingLab.text = "Time: 0"
             self.exerciseLabel.text = "Time completed"
-            myUtterance = AVSpeechUtterance(string: self.exerciseLabel.text)
-            myUtterance.rate = 0.1
-            synth.speakUtterance(myUtterance)
-            //roundLabel.text = "Round: 0"
+            speech(self.exerciseLabel.text!)
             timer.invalidate()
+            repeatButton.enabled = true
         }else if(sec == 0)  {
                 timer.invalidate()
                 lauchExercise(Float(seconds))
@@ -95,12 +117,18 @@ class TimerViewController: UIViewController {
     
     @IBAction func onClickStopButton(sender: UIButton) {
         timer.invalidate()
+        countdown.invalidate()
+        repeatButton.enabled = true
     }
     
     @IBAction func onClickRepeatButton(sender: UIButton) {
+        repeatButton.enabled = false
         timer.invalidate()
+        cd = 5
         tempRounds = totalRounds
-        lauchExercise(Float(seconds))
+        countdown = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("countDownSub"), userInfo: nil, repeats: true)
+
+       // lauchExercise(Float(seconds))
         
     }
 }
