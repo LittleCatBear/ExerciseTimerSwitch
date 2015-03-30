@@ -39,7 +39,7 @@ class TimerViewController: UIViewController {
         repeatButton.enabled = false
         pauseButton.enabled = false
         roundLabel.text = "Time left"
-        timingLab.text = "Switch"
+        timingLab.text = "Switch time"
         self.sec = self.seconds
         self.tempRounds = self.totalRounds
         if(cd > 0){
@@ -75,7 +75,7 @@ class TimerViewController: UIViewController {
         speech(self.exerciseLabel.text!)
         self.sec = self.seconds
         //self.tempRounds = totalRounds
-        self.timingLab.text = "Switch: \(sec)"
+        self.timingLab.text = "Switch time: \(sec)"
         self.roundLabel.text = "Time left: \(tempRounds)"
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("subtractTime"), userInfo: nil, repeats: true)
     }
@@ -107,7 +107,7 @@ class TimerViewController: UIViewController {
         timingLab.text = "Switch: \(sec)"
         roundLabel.text = "Time left: \(tempRounds)"
         if(tempRounds == 0){
-            self.timingLab.text = "Time left: 0"
+            self.timingLab.text = "Switch time: 0"
             self.exerciseLabel.text = "Time completed"
             speech(self.exerciseLabel.text!)
             timer.invalidate()
