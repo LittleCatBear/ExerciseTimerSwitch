@@ -17,6 +17,14 @@
 		E32222CC1AC3530100E07614 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32222CB1AC3530100E07614 /* TimerViewController.swift */; };
 		E32222CE1AC3C9D100E07614 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E32222CD1AC3C9D100E07614 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		E32222D01AC4F95C00E07614 /* UIViewAnimationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32222CF1AC4F95C00E07614 /* UIViewAnimationExt.swift */; };
+		E3F695A01ACBFCAF00884BD8 /* Universal-college-draft_DEMO-version.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3F6959F1ACBFCAF00884BD8 /* Universal-college-draft_DEMO-version.ttf */; };
+		E3F695A11ACBFCAF00884BD8 /* Universal-college-draft_DEMO-version.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3F6959F1ACBFCAF00884BD8 /* Universal-college-draft_DEMO-version.ttf */; };
+		E3F695A31ACBFCC200884BD8 /* Universal-college_DEMO-version.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3F695A21ACBFCC200884BD8 /* Universal-college_DEMO-version.ttf */; };
+		E3F695A41ACBFCC200884BD8 /* Universal-college_DEMO-version.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3F695A21ACBFCC200884BD8 /* Universal-college_DEMO-version.ttf */; };
+		E3F695A61ACBFCD200884BD8 /* hint-retrï-grunge_free-version.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3F695A51ACBFCD200884BD8 /* hint-retrï-grunge_free-version.ttf */; };
+		E3F695A71ACBFCD200884BD8 /* hint-retrï-grunge_free-version.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3F695A51ACBFCD200884BD8 /* hint-retrï-grunge_free-version.ttf */; };
+		E3F695A91ACBFCE200884BD8 /* handwriting-draft_free-version.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3F695A81ACBFCE200884BD8 /* handwriting-draft_free-version.ttf */; };
+		E3F695AA1ACBFCE200884BD8 /* handwriting-draft_free-version.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E3F695A81ACBFCE200884BD8 /* handwriting-draft_free-version.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,10 @@
 		E32222CB1AC3530100E07614 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		E32222CD1AC3C9D100E07614 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E32222CF1AC4F95C00E07614 /* UIViewAnimationExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewAnimationExt.swift; sourceTree = "<group>"; };
+		E3F6959F1ACBFCAF00884BD8 /* Universal-college-draft_DEMO-version.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Universal-college-draft_DEMO-version.ttf"; sourceTree = "<group>"; };
+		E3F695A21ACBFCC200884BD8 /* Universal-college_DEMO-version.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Universal-college_DEMO-version.ttf"; sourceTree = "<group>"; };
+		E3F695A51ACBFCD200884BD8 /* hint-retrï-grunge_free-version.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "hint-retrï-grunge_free-version.ttf"; sourceTree = "<group>"; };
+		E3F695A81ACBFCE200884BD8 /* handwriting-draft_free-version.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "handwriting-draft_free-version.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			children = (
 				E32222CD1AC3C9D100E07614 /* AVFoundation.framework */,
 				E32222A61AC34A1F00E07614 /* Exercise Timer Switch */,
+				E3F6959E1ACBFC8100884BD8 /* Resources */,
 				E32222BE1AC34A1F00E07614 /* Exercise Timer SwitchTests */,
 				E32222A51AC34A1F00E07614 /* Products */,
 			);
@@ -123,6 +136,18 @@
 				E32222C01AC34A1F00E07614 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3F6959E1ACBFC8100884BD8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3F695A81ACBFCE200884BD8 /* handwriting-draft_free-version.ttf */,
+				E3F695A51ACBFCD200884BD8 /* hint-retrï-grunge_free-version.ttf */,
+				E3F695A21ACBFCC200884BD8 /* Universal-college_DEMO-version.ttf */,
+				E3F6959F1ACBFCAF00884BD8 /* Universal-college-draft_DEMO-version.ttf */,
+			);
+			name = Resources;
+			path = "Exercise Timer Switch";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,8 +230,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F695A91ACBFCE200884BD8 /* handwriting-draft_free-version.ttf in Resources */,
+				E3F695A61ACBFCD200884BD8 /* hint-retrï-grunge_free-version.ttf in Resources */,
 				E32222B11AC34A1F00E07614 /* Main.storyboard in Resources */,
+				E3F695A31ACBFCC200884BD8 /* Universal-college_DEMO-version.ttf in Resources */,
 				E32222B61AC34A1F00E07614 /* LaunchScreen.xib in Resources */,
+				E3F695A01ACBFCAF00884BD8 /* Universal-college-draft_DEMO-version.ttf in Resources */,
 				E32222B31AC34A1F00E07614 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +244,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F695A71ACBFCD200884BD8 /* hint-retrï-grunge_free-version.ttf in Resources */,
+				E3F695A41ACBFCC200884BD8 /* Universal-college_DEMO-version.ttf in Resources */,
+				E3F695A11ACBFCAF00884BD8 /* Universal-college-draft_DEMO-version.ttf in Resources */,
+				E3F695AA1ACBFCE200884BD8 /* handwriting-draft_free-version.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +456,7 @@
 				E32222C71AC34A1F00E07614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E32222C81AC34A1F00E07614 /* Build configuration list for PBXNativeTarget "Exercise Timer SwitchTests" */ = {
 			isa = XCConfigurationList;
@@ -431,6 +465,7 @@
 				E32222CA1AC34A1F00E07614 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
