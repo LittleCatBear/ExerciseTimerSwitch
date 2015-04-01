@@ -18,9 +18,18 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        findFontNames()
         ExerciseTextField.delegate = self
          self.exerciseTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func findFontNames(){
+        for familyName in UIFont.familyNames(){
+            for fontName in UIFont.fontNamesForFamilyName(String(format: familyName as NSString)) {
+                NSLog("\(fontName)");
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
