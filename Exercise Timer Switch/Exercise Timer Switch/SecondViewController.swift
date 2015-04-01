@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var ExerciseTableView: UITableView!
+
     @IBOutlet weak var timingTextField: UITextField!
     @IBOutlet weak var timingLabel: UILabel!
     @IBOutlet weak var roundTextField: UITextField!
@@ -23,24 +23,17 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         self.countDownTextField.delegate = self
         self.countDownTextField.text = "5"
         self.timingLabel.text = ""
-        self.ExerciseTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
-        self.ExerciseTableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-   // @IBAction func onClickNewTiming(sender: UIButton) {
-      //  self.timingLabel.text = self.timingTextField.text
-     // self.timingLabel.textColor = UIColor.blackColor()
-   // }
 
     @IBAction func goToInit(segue:UIStoryboardSegue){
         self.timingLabel.text = ""
@@ -98,19 +91,6 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
             }
         }
         return flag
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return globalExerciceTable.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.ExerciseTableView.dequeueReusableCellWithIdentifier("cell") as UITableViewCell
-        cell.textLabel?.text = globalExerciceTable[indexPath.row]
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     }
     
     func textFieldShouldReturn(textField: UITextField!) -> Bool
