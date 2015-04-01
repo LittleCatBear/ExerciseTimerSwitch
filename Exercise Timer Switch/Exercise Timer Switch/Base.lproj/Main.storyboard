@@ -181,11 +181,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRY-Jh-7Kg">
-                                <rect key="frame" x="16" y="407" width="280" height="65"/>
+                                <rect key="frame" x="16" y="381" width="280" height="65"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfM-Ye-ynL">
-                                        <rect key="frame" x="111" y="18" width="57" height="30"/>
-                                        <state key="normal" title="Register">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PfM-Ye-ynL">
+                                        <rect key="frame" x="115" y="8" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Mrv-iZ-Sl7"/>
+                                            <constraint firstAttribute="width" constant="50" id="i9h-Qr-EsR"/>
+                                        </constraints>
+                                        <state key="normal" image="save">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
@@ -238,7 +242,7 @@
                             <constraint firstItem="ioO-ec-JzT" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="DWP-9D-dG9"/>
                             <constraint firstItem="eIj-n0-1U8" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" id="G0i-Xv-MpS"/>
                             <constraint firstItem="eIj-n0-1U8" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="20" id="Gf7-pd-dSD"/>
-                            <constraint firstItem="VRY-Jh-7Kg" firstAttribute="top" secondItem="jPQ-KP-1FT" secondAttribute="bottom" constant="86" id="HvF-pu-SnA"/>
+                            <constraint firstItem="VRY-Jh-7Kg" firstAttribute="top" secondItem="jPQ-KP-1FT" secondAttribute="bottom" constant="60" id="HvF-pu-SnA"/>
                             <constraint firstItem="AY2-0u-DXW" firstAttribute="leading" secondItem="ioO-ec-JzT" secondAttribute="trailing" constant="8" id="Ja3-aS-HFq"/>
                             <constraint firstItem="AY2-0u-DXW" firstAttribute="trailing" secondItem="QS5-Rx-YEW" secondAttribute="trailingMargin" id="JaD-Sj-hWs"/>
                             <constraint firstItem="fa8-GY-SGg" firstAttribute="top" secondItem="ioO-ec-JzT" secondAttribute="bottom" constant="20" id="Kp2-eH-akF"/>
@@ -445,6 +449,7 @@
         <image name="liste" width="50" height="50"/>
         <image name="pause" width="213" height="211"/>
         <image name="repeat" width="122" height="122"/>
+        <image name="save" width="150" height="150"/>
         <image name="start" width="213" height="213"/>
         <image name="stop" width="213" height="214"/>
         <image name="workout" width="50" height="50"/>
