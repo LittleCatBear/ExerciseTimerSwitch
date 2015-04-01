@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Workout" id="MLm-yI-3wx"/>
+                    <tabBarItem key="tabBarItem" title="Workout" image="workout" selectedImage="workout" id="MLm-yI-3wx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzY-a0-qqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -449,5 +449,6 @@
         <image name="repeat" width="122" height="122"/>
         <image name="start" width="213" height="213"/>
         <image name="stop" width="213" height="214"/>
+        <image name="workout" width="44" height="44"/>
     </resources>
 </document>
